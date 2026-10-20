@@ -1,8 +1,8 @@
 # Luméa — galerie du monde
 
-Luméa est une galerie photo bilingue qui invite à découvrir une destination dans
-chacun de 194 pays souverains. Le projet est réalisé en HTML, CSS et JavaScript
-natif, sans framework ni installation de dépendances.
+Luméa  est une galerie photo bilingue qui invite à découvrir une destination dans
+chacun de 194 pays souverains. Le projet est réalisé en  HTML, CSS et JavaScript
+natif, sans framework ni installation de dépendances...
 
 ## Lancer le projet en local
 
