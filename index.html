@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Luméa, une galerie d'images pour ralentir et regarder autrement."
+    />
+    <meta name="theme-color" content="#f7f5f0" />
+    <title>Luméa — galerie visuelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Luméa, accueil" data-i18n-aria="home">
+        <span class="wordmark-mark" aria-hidden="true">l.</span>
+        luméa<span class="wordmark-period">.</span>
+      </a>
+      <p class="header-note" data-i18n="headerNote">Un atlas de belles choses</p>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="Choisir la langue">
+          <button class="language-button is-active" type="button" data-language="fr" aria-pressed="true">FR</button>
+          <span aria-hidden="true"></span>
+          <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="header-link" href="#galerie"><span data-i18n="explore">Explorer</span> <span aria-hidden="true">↘</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="collection">Collection visuelle · N° 01</span></p>
+          <h1 id="intro-title"><span data-i18n="heroTitle">L’art de<br />regarder <em>ailleurs.</em></span></h1>
+          <p class="intro-description" data-i18n="heroDescription">
+            Des fragments de lumière, des lieux qui nous appellent et des instants
+            qu’on aimerait garder un peu plus longtemps.
+          </p>
+          <a class="discover-link" href="#galerie">
+            <span data-i18n="discover">Découvrir la collection</span> <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <div class="intro-aside">
+          <span class="aside-star" aria-hidden="true">✳</span>
+          <p data-i18n="aside">Une fenêtre<br />sur le monde.</p>
+          <span class="aside-index" data-i18n="countryTotal">194 pays souverains</span>
+        </div>
+        <div class="intro-image-wrap">
+          <img
+            class="intro-image"
+            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1500&q=85"
+            alt="Soleil levant sur une prairie brumeuse"
+            data-i18n-alt="heroImageAlt"
+          />
+          <span class="image-caption"><span></span> <span data-i18n="heroCaption">Matin calme, Toscane</span></span>
+          <span class="image-number">Luméa · 01</span>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="galerie" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <div>
+            <p class="eyebrow" data-i18n="galleryEyebrow">Le regard du moment</p>
+            <h2 id="gallery-title"><span data-i18n="galleryTitle">Petites <em>évasions</em></span></h2>
+          </div>
+          <p class="gallery-count" id="country-summary" aria-live="polite"></p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <label class="country-search">
+            <span class="sr-only" data-i18n="searchLabel">Rechercher un pays</span>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="country-search" type="search" placeholder="Rechercher un pays…" autocomplete="off" data-i18n-placeholder="searchPlaceholder" />
+          </label>
+          <div class="filters" role="group" aria-label="Filtrer par continent" data-i18n-aria="filtersLabel">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true" data-i18n="filterAll">Tous les pays</button>
+            <button class="filter-button" type="button" data-filter="Africa" aria-pressed="false" data-i18n="filterAfrica">Afrique</button>
+            <button class="filter-button" type="button" data-filter="Americas" aria-pressed="false" data-i18n="filterAmericas">Amériques</button>
+            <button class="filter-button" type="button" data-filter="Asia" aria-pressed="false" data-i18n="filterAsia">Asie</button>
+            <button class="filter-button" type="button" data-filter="Europe" aria-pressed="false" data-i18n="filterEurope">Europe</button>
+            <button class="filter-button" type="button" data-filter="Oceania" aria-pressed="false" data-i18n="filterOceania">Océanie</button>
+          </div>
+        </div>
+
+        <p class="gallery-status" id="gallery-status" role="status" aria-live="polite"></p>
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+        <button class="load-more-button" id="load-more" type="button" hidden data-i18n="loadMore">Voir plus de pays</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#" aria-label="Luméa, retour en haut" data-i18n-aria="footerHome">
+        <span class="wordmark-mark" aria-hidden="true">l.</span>
+        luméa<span class="wordmark-period">.</span>
+      </a>
+      <p data-i18n="footerNote">Fait pour les esprits qui vagabondent.</p>
+      <a class="back-to-top" href="#" aria-label="Retour en haut" data-i18n-aria="backToTop">↑</a>
+    </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" inert>
+      <button class="lightbox-backdrop" type="button" data-close aria-label="Fermer la visionneuse" data-i18n-aria="closeViewer"></button>
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Visionneuse d’images" data-i18n-aria="viewerLabel">
+        <button class="lightbox-close" type="button" data-close aria-label="Fermer" data-i18n-aria="close">×</button>
+        <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Image précédente" data-i18n-aria="previousImage">←</button>
+        <figure class="lightbox-figure">
+          <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+          <figcaption>
+            <span class="lightbox-title" id="lightbox-title"></span>
+            <span class="lightbox-location" id="lightbox-location"></span>
+          </figcaption>
+          <a class="lightbox-credit" id="lightbox-credit" target="_blank" rel="noopener noreferrer" hidden></a>
+        </figure>
+        <button class="lightbox-arrow lightbox-next" type="button" aria-label="Image suivante" data-i18n-aria="nextImage">→</button>
+        <span class="lightbox-counter" id="lightbox-counter"></span>
+      </div>
+    </div>
+  </body>
+</html>
